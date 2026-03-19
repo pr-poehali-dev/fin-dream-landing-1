@@ -1,5 +1,11 @@
 import Icon from "@/components/ui/icon";
 
+const ctaItems = [
+  { icon: "Shield", text: "Ваши данные защищены" },
+  { icon: "Zap", text: "Готово за 2 минуты" },
+  { icon: "X", text: "Отмена в любой момент" },
+] as const;
+
 const CtaSection = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
@@ -33,13 +39,9 @@ const CtaSection = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-8 text-gray-400 text-sm">
-            {[
-              { icon: "Shield", text: "Ваши данные защищены" },
-              { icon: "Zap", text: "Готово за 2 минуты" },
-              { icon: "X", text: "Отмена в любой момент" },
-            ].map((item) => (
+            {ctaItems.map((item) => (
               <span key={item.text} className="flex items-center gap-2">
-                <Icon name={item.icon as any} size={16} className="text-purple-400" />
+                <Icon name={item.icon} size={16} className="text-purple-400" />
                 {item.text}
               </span>
             ))}
