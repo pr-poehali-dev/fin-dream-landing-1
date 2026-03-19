@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1773938746645075995.html"
 	],
 	prefix: "",
 	theme: {
@@ -17,8 +18,20 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+		fontFamily: {
+			oswald: ['Oswald', 'sans-serif'],
+			golos: ['Golos Text', 'sans-serif'],
+		},
 		extend: {
 			colors: {
+				'fd-bg': '#080c14',
+				'fd-surface': '#0f1623',
+				'fd-card': '#131c2e',
+				'fd-green': '#00e5a0',
+				'fd-cyan': '#00c8f0',
+				'fd-purple': '#7c5cfc',
+				'fd-text': '#e8f0fe',
+				'fd-muted': '#8899aa',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -70,25 +83,37 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-up': {
+					from: { opacity: '0', transform: 'translateY(30px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in': {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { boxShadow: '0 0 20px rgba(0,229,160,0.3)' },
+					'50%': { boxShadow: '0 0 40px rgba(0,229,160,0.6)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-12px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-up': 'fade-up 0.7s ease-out forwards',
+				'fade-in': 'fade-in 0.6s ease-out forwards',
+				'glow-pulse': 'glow-pulse 2.5s ease-in-out infinite',
+				'float': 'float 4s ease-in-out infinite'
 			}
 		}
 	},
